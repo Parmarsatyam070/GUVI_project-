@@ -1,21 +1,44 @@
-package com.frauddetection.util;
-
-/**
- * Utility for validating data fields using generics and collections.
- * Demonstrates: Generics, Collections, Exception handling via custom exception.
- */
-import java.util.Set;
-import java.util.HashSet;
+/*package com.frauddetection.util;
 
 public class ValidationUtil {
-    private static final Set<String> seenUsernames = new HashSet<>();
 
-    public static <T> boolean isUnique(T value) {
-        // Generic uniqueness check (for username/userID)
-        return seenUsernames.add(String.valueOf(value));
+    public static boolean isEmpty(String s) {
+        return (s == null || s.trim().isEmpty());
     }
 
-    public static boolean isStrongPassword(String password) {
-        return password.matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{6,}$");
+    public static boolean isNumber(String s) {
+        if (isEmpty(s)) return false;
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static void require(boolean condition, String message) {
+        if (!condition) {
+            throw new IllegalArgumentException(message);
+        }
+    }
+}
+*/
+
+package com.frauddetection.util;
+
+public class ValidationUtil {
+
+    public static boolean isEmpty(String s) {
+        return s == null || s.trim().isEmpty();
+    }
+
+    public static boolean isNumber(String s) {
+        if (isEmpty(s)) return false;
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

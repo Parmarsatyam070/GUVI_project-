@@ -1,0 +1,4 @@
+[INFO] Application Startup Initialized
+[INFO] Fraud Detection System Loaded at 2025-01-01
+[INFO] Database connection pool initialized.
+[INFO] ML models loaded: Weka + DL4J

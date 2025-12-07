@@ -1,0 +1,60 @@
+/* ===========================================
+   MATRIX THEME (Cyber Dark Green)
+   =========================================== */
+
+body {
+    background-color: #0b0f0c;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #00ff88;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0,255,150,0.7);
+}
+
+button {
+    background-color: #003322;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005533;
+}
+
+input, select, textarea {
+    background-color: #001a12;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    padding: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #00ff88;
+}
+
+table th {
+    background: #003322;
+    padding: 10px;
+    border-bottom: 2px solid #00ff88;
+}
+
+table td {
+    padding: 8px;
+    border-bottom: 1px solid #004433;
+}
+
+.alert {
+    background-color: #220000;
+    color: #ff4444;
+    padding: 15px;
+    border-left: 4px solid #ff4444;
+}

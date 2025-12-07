@@ -1,0 +1,47 @@
+package com.frauddetection.ml;
+
+import weka.classifiers.Classifier;
+import weka.core.Instance;
+import weka.core.Instances;
+
+public class WekaFraudModel {
+
+    private static Classifier classifier;
+    private static Instances modelHeader;
+
+    static {
+        try {
+            // Load trained model file from src/main/resources/ml/
+            classifier = (Classifier) weka.core.SerializationHelper.read(
+                    WekaFraudModel.class.getClassLoader()
+                            .getResourceAsStream("ml/fraud-weka.model")
+            );
+
+            // Instead of loading fraud-schema.arff, build header programmatically
+            modelHeader = FeatureExtractor.buildWekaHeader();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Predict fraud probability using WEKA model
+     */
+    public static double predictFraud(double amount, int age, String paymentType) {
+        try {
+            // Build instance
+            Instance inst = FeatureExtractor.createWekaInstance(amount, age, paymentType, modelHeader);
+
+            // Get fraud probability (index 1 = "fraud")
+            double[] prob = classifier.distributionForInstance(inst);
+
+            return prob[1];
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return 0.0;
+    }
+}

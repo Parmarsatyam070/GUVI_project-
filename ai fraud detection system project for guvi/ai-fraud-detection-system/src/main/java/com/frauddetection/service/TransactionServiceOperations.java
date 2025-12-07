@@ -1,9 +1,15 @@
 package com.frauddetection.service;
 
 import com.frauddetection.model.Transaction;
+import com.frauddetection.exception.DatabaseException;
+
 import java.util.List;
-import java.sql.SQLException;
 
 public interface TransactionServiceOperations {
-    List<Transaction> fetchAll() throws SQLException;
+
+    // fetch all transactions
+    List<Transaction> getAll() throws DatabaseException;
+
+    // save a transaction
+    boolean save(Transaction transaction);
 }
