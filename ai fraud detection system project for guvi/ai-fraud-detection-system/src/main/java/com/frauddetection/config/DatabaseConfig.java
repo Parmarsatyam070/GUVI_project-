@@ -16,8 +16,8 @@ public class DatabaseConfig {
             props.load(DatabaseConfig.class.getClassLoader()
                     .getResourceAsStream("config/database.properties"));
 
-            url = props.getProperty("db.url");
-            username = props.getProperty("db.username");
+            url = props.getProperty("jdbc:mysql://localhost:3306/fraud_detection_db");
+            username = props.getProperty("root");
             password = props.getProperty("Parmarsatyam09@#");
 
             Class.forName(props.getProperty("db.driver"));

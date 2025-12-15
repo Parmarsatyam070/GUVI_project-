@@ -1,19 +1,3 @@
-/*package com.frauddetection.service;
-
-public class EmailService {
-
-    public void sendAlert(String toEmail, String message) {
-        // Replace this with SMTP or JavaMail later
-        System.out.println("=== EMAIL ALERT ===");
-        System.out.println("To: " + toEmail);
-        System.out.println("Message: " + message);
-        System.out.println("===================");
-    }
-}
-*/
-
-
-
 package com.frauddetection.service;
 
 public class EmailService {

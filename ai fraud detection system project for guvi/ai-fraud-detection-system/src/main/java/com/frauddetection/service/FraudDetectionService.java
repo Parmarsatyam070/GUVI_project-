@@ -1,18 +1,3 @@
-/*package com.frauddetection.service;
-
-import com.frauddetection.model.Transaction;
-import com.frauddetection.util.IConstants;
-
-public class FraudDetectionService implements FraudDetectionServiceOperations {
-    @Override
-    public boolean isFraudulent(Transaction transaction) {
-        return transaction.getAmount() > IConstants.FRAUD_SCORE_THRESHOLD * IConstants.MAX_TRANSACTION_AMOUNT;
-    }
-}
-*/
-
-
-
 package com.frauddetection.service;
 
 import com.frauddetection.dao.FraudDAO;
@@ -42,20 +27,3 @@ public class FraudDetectionService {
         return finalScore;
     }
 }
-
-
-
-/*package com.frauddetection.service;
-
-import com.frauddetection.model.Transaction;
-
-public class FraudDetectionService {
-
-    // Dummy ML logic (replace with DL4J or WEKA later)
-    public boolean isFraudulent(Transaction tx) {
-        if (tx.getAmount() > 10000) return true;
-        if (tx.getLocation().equalsIgnoreCase("international")) return true;
-        return false;
-    }
-}
-*/
